@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family: Releway;
+    box-sizing: border-box;
+}
+
+.cabecalho{
+    min-width: fit-content;
+    background-color:#040436 !important ;
+    padding: 20px 50px !important;
+}
+
+.fundocinzaescuro{
+    background-color: #040436 !important;
+}
+
+.btn, button, input[type=button], input[type=submit]{
+    font-weight: bold;
+    background-color: #ff00ac;
+    font-size: 90%;
+    padding: 15px, 30px;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+
+}
+
+input{
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+   
+}
+
+.alignHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imglogo{
+    height: 40px;
+}
+
+.slide{
+    width: 100%;
+    height: auto;
+    background-color: #020211;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+
+}
+.slide img{
+    width: 90%;
+    height: 535px;
+}
+
+.conteudo > *{
+    min-height: fit-content;
+}
+
+.textoCentro{
+    text-align: center;
+}
+
+.text150{
+ font-size: 150%;
+}
+
+.textoNegrito{
+    font-weight: bold;
+}
+
+.colorTexto{
+    color: #040436;
+}
+
+.paddingTexto{
+    padding: 60px 20px 30px 20px;
+}
+form{
+    display: flex;
+    box-sizing: border-box;
+}
+
+
+fieldset{
+    padding: 25px 20px;
+    border:  1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.wrapper > *{
+    margin: 10px;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"], input[type="number"],
+input[type="date"], select, textarea{
+    border: 1px solid #CCCCCC;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 95%;
+    resize: none;
+    width: 100%;
+}
+
+textarea{
+    height: 100px;
+}
+
+.background{
+    background-color: whitesmoke;
+}
+
+
+.vbox{
+    display: flex;
+    flex-direction: column;
+}
+.vbox .space20{
+    margin-top: 30px;
+}
+
+.vBoxMax{
+    display: block;
+}
+
+legend{
+    margin: 10px;
+    font-weight: bold;
+    font-size: 150%;
+}
+.space20{
+   margin-top: 20px;
+}
+ .vbox.space5 > * + *{
+    margin-top: 20px;
+}
+
+.bPadding20{
+    padding-bottom: 20px;
+}
+.vBoxMax{
+    display: block;
+}
+.fontSmall{
+    font-size: 75%;
+}
+
+.hbox{
+    display: flex;
+   flex-direction: row;
+}
+
+.chkInput, .clcInput{
+     transition-duration: 0.25ms;
+     display: block;
+     position: relative;
+     padding-left: 30px;
+     margin-bottom: 12px;
+     cursor: pointer;
+     user-select: none;
+     margin-top: 10px;
+}
+
+.areaLink{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dPadding20{
+  padding-bottom: 10px;
+}
+
+
+
+.fontBold{
+    font-weight: bold;
+}
+
+.alinhaFildset{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.padding20{
+    padding: 20px;
+    width: 87%;
+
+}
+.btnclaro{
+    margin-top: 10px;
+     background-color: #ff00ac;
+     width: 100%;
+     height: 60px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #ffffff;
+     font-weight: bold;
+     cursor: pointer;
+     border-radius: 15px;
+}
+.fundoCinzaEscuro{
+    background-color: #040436; 
+    width: 100%;
+    height: auto;
+}
+
+.rodape{
+    padding: 50px !important;
+    flex-wrap:  wrap;
+}
+
+.textobranco{
+    color: #ffffff;
+}
+
+.space10{
+    padding: 3px;
+}
+.expand{
+    flex-grow: 1;
+}
+
+.texto150{
+    font-size: 110%;
+}
+
+.texto100{
+    font-size: 100%;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
+}
+
+.corbranco{
+    color: #ffffff;
+}
+.cursor{
+    cursor: pointer;
+}
+
+.fundoborda{
+    background-color: #ffffff;
+    width: 43px;
+    height: 43px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
