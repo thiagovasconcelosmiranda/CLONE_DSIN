@@ -1,23 +1,18 @@
 <?php
-if(!isset($_POST['curriculo'])){
-  $nameupload = ' Anexar Currículo';
-}else{
-  $nameupload = $_POST['curriculo'];
-}
-
+   session_start();
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" media="screen"/><link>
+    <link rel="stylesheet" type="text/css" href="assets/css/styless.css" media="screen"/><link>
     <link rel="stylesheet" type="text/css" href="assets/css/alert.css"/><link>
-
     <!--js-->
-    <script type="text/javascript" src="jquery-3.6.3.min.js"></script>
-    <script type="text/javascript" src="/scripts.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-3.6.3.min.js"></script>
     
     <title>DSIN - Carreira</title>
 </head>
@@ -25,20 +20,26 @@ if(!isset($_POST['curriculo'])){
     <header class="cabecalho  fundocinzaescuro">
         <div class="alignHeader">
           <a href="#">
-           <img class="imglogo" src="./images/logo-tipoDSIN.png" alt="logo"/>
+           <img class="imglogo" src="assets/images/logo-tipoDSIN.png" alt="logo"/>
           </a>
            <input type='button' value="Trabalhe conosco" class="btn "/>
         </div>
     </header>
     <div class="slide">
-        <img id="slide"/>
+        <img id="slides"/>
+    </div>
+    <div>
+    <div class="alertmsg" id="alertmsg">
+      <div class="align-text">
+         <h4> <?php if(isset($_SESSION['msg'])){ echo $_SESSION['msg']; } ?></h4>
+      </div>
     </div>
     <div class="conteudo">
       <div class="textoCentro text150 textoNegrito colorTexto paddingTexto">
         Cadastre-se e fique sabendo das vagas!
       </div>
       <form method="POST" action="./Dados.php" class="wrapper conteudo"
-         style="max-width: 1200px; margin: auto;" enctype="multipart/form-data">
+          enctype="multipart/form-data">
          <fieldset>
             <legend>Dados</legend>
             <div class="vbox space20">
@@ -98,9 +99,10 @@ if(!isset($_POST['curriculo'])){
                     <a class="areaLink" href="#">Saiba mais</a>
                 </label>
             </div>
-        </fieldset>
+          </fieldset>
+          
         <div class="vbox space20 vBoxMax">
-          <fieldset>
+          <fieldset style="margin-top: -10px">
             <legend>Tipos</legend>
             <div class="vbox space20 bPadding20 vBoxMax">
               <label class="hbox space5 hbox space5 chkInput">
@@ -133,6 +135,7 @@ if(!isset($_POST['curriculo'])){
             </div>
            </fieldset>
           </div>
+
         </div>
         <div class="alinhaFildset">
             <fieldset class="padding20 flex">
@@ -143,7 +146,7 @@ if(!isset($_POST['curriculo'])){
            <div class="background">
              <div class="vbox space20 bPadding25 vBoxMax" style="max-width: 1200px; margin: auto; padding: 20px;">  
                <label for="uploadImage" class="btnclaro" id="upload">Anexar Currículo*</label>
-               <input   id="uploadImage" type="file" name="curriculo" style="display: none;" />
+               <input   id="uploadImage" type="file" name="curriculo" onchange="preview()" style="display: none;" />
                <label class="btnclaro">
                  <input type="submit" value="Enviar" id="enviar"/>
                </label>
@@ -168,15 +171,13 @@ if(!isset($_POST['curriculo'])){
          <div class="textobranco textoNegrito texto110" >Siga nossas mídias:</div>
          <div class="vbox space10 textobranco flex">
            <div class="fundoborda">
-               <img class="corbranco cursor" src="./images//facebook.svg" height="40"/>
+               <img class="corbranco cursor" src="assets/images/facebook.svg" height="40"/>
            </div>
           <a href="#">
-            <img class="imglogo" src="./images/logo.png"/>
+            <img class="imglogo" src="assets/images/logo.png"/>
           </a>
          </div>
        </div>
-       <script src="./script.js" text="javascript" ></script>
-
        <div class="container" id="active">
          <div class="modal">
             <div class="title">
@@ -190,6 +191,29 @@ if(!isset($_POST['curriculo'])){
             </div>
          </div> 
        </div>
-       <script type="text/javascript" src="assets/js/scriptalert.js"></script>
-</body>
+       <script src="assets/js/script.js" type="text/javascript" ></script>
+       <script src="assets/js/scriptAlert.js" type="text/javascript"></script>
+       <script>
+        
+         var alertmsg = document.getElementById('alertmsg');
+       
+
+      <?php   
+
+        if(isset($_SESSION['msg'])){
+      ?>
+             alertmsg.style.marginLeft="70%";
+        <?php
+      }
+
+       ?>
+
+         setTimeout(function(){
+          alertmsg.style.marginLeft="100%";
+          <?php 
+           session_destroy();
+          ?>
+         }, 9000);
+       </script>
+  </body>
 </html>

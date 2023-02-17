@@ -1,11 +1,12 @@
 
-function fechar(){
-    document.getElementById('active').style.display="none";
-  }    
-
 var button = document.getElementById('enviar');
 button.addEventListener('click',  valida_form );
 var alertmodel = document.getElementById('active');
+
+
+function fechar(){
+    document.getElementById('active').style.display="none";
+  }    
 
 function valida_form (){
    if(document.getElementById("nome").value == ""){
@@ -55,6 +56,9 @@ function valida_form (){
     }
 }
 
+function preview(){
+  var text = document.getElementById('upload');
+    var namearquivo = $('input[name="curriculo"]').val();
+    text.innerHTML= namearquivo;
+  }
 
-    
-  

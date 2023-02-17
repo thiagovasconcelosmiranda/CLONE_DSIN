@@ -27,6 +27,7 @@
            move_uploaded_file($_FILES['curriculo']['tmp_name'], $dir.$new_name);
       }
           header('Location: index.php');
+          $_SESSION['msg'] = 'Dados enviado com sucesso';
     }else{
       return false;
     }
