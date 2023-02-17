@@ -5,17 +5,19 @@ let i = 0;
 
 function slideShow(){
   slide.src = images[i];
-
   if(i < images.length - 1){
      i++;
   }else{
      i=0;
   }
-
   setTimeout(slideShow, 10000);
 }
 
 slideShow();
+
+function fechar(){
+  document.getElementById('active').style.display="none";
+}
 
 
 
