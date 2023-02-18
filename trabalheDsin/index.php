@@ -22,7 +22,9 @@
           <a href="#">
            <img class="imglogo" src="assets/images/logo-tipoDSIN.png" alt="logo"/>
           </a>
+          <a href="#form">
            <input type='button' value="Trabalhe conosco" class="btn "/>
+          </a> 
         </div>
     </header>
     <div class="slide">
@@ -38,6 +40,7 @@
       <div class="textoCentro text150 textoNegrito colorTexto paddingTexto">
         Cadastre-se e fique sabendo das vagas!
       </div>
+      <section id="form">
       <form method="POST" action="./Dados.php" class="wrapper conteudo"
           enctype="multipart/form-data">
          <fieldset>
@@ -152,7 +155,8 @@
                </label>
               </div>   
             </div>
-      </form>
+        </form>
+      </section>
     </div>
     <footer class=" rodape hbox  fundoCinzaEscuro"> 
       <div class="vbox space10 textobranco" style="display: block;">
@@ -191,25 +195,17 @@
             </div>
          </div> 
        </div>
-       <script src="assets/js/script.js" type="text/javascript" ></script>
+       <script src="assets/js/scripts.js" type="text/javascript" ></script>
        <script src="assets/js/scriptAlert.js" type="text/javascript"></script>
        <script>
         
          var alertmsg = document.getElementById('alertmsg');
        
+       <?php if(isset($_SESSION['msg'])){?>
+                alertmsg.style.marginLeft="70%"; <?php } ?>
 
-      <?php   
-
-        if(isset($_SESSION['msg'])){
-      ?>
-             alertmsg.style.marginLeft="70%";
-        <?php
-      }
-
-       ?>
-
-         setTimeout(function(){
-          alertmsg.style.marginLeft="100%";
+            setTimeout(function(){
+              alertmsg.style.marginLeft="100%";
           <?php 
            session_destroy();
           ?>
