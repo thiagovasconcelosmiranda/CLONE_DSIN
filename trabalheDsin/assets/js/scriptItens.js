@@ -25,8 +25,8 @@ behavior: "smooth"
 
 
 let slide = document.getElementById('slides');
-         let images = ["assets/images/propaganda.jpg" ];
-         let i = 0;
+let images = ["assets/images/propaganda.jpg","assets/images/propaganda2.jpg" ];
+let i = 0;
 
          function slideShow(){
             slide.src = images[i];
@@ -38,5 +38,23 @@ let slide = document.getElementById('slides');
            setTimeout(slideShow, 10000);
         }
         slideShow();
+
+        
+        
+        var closeModal = document.getElementById('modalClose');
+        var containerModal = document.getElementById('containerModal');
+        var modal = document.getElementById('modal');
+         
+         closeModal.addEventListener('click', function(){
+            containerModal.style.display="none";
+         });
+
+         function inModel(event) {
+            if(event == "desenvolvimento"){
+              containerModal.style.display="flex";
+              modal.style.backgroundImage="url('assets/images/propagandaVaga1.jpg')";
+            }
+         }
+
        
       

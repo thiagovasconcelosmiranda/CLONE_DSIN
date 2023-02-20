@@ -9,12 +9,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/styless.css" media="screen"/><link>
+    <link rel="icon" href="assets/images/DSIN-TECNOLOGIA-DA-INFORMACAO.webp" type="image/webp" sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen"/><link>
     <link rel="stylesheet" type="text/css" href="assets/css/alert.css"/><link>
     <!--js-->
     <script type="text/javascript" src="assets/js/jquery-3.6.3.min.js"></script>
     
-    <title>DSIN - Carreira</title>
+    <title>Dsin - Carreira</title>
+    <style>
+       
+
+       </style>
 </head>
 <body>
     <header class="cabecalho  fundocinzaescuro">
@@ -23,7 +28,7 @@
            <img class="imglogo" src="assets/images/logo-tipoDSIN.png" alt="logo"/>
           </a>
           <a href="#form">
-           <input type='button' value="Trabalhe conosco" class="btn "/>
+           <input type='button' value="Trabalhe conosco" class="btn" onclick="audio.play();"/>
           </a> 
         </div>
     </header>
@@ -74,7 +79,7 @@
                 <label class="hbox fontSmall chkInput">
                     <input type="checkbox" name="area" id="areateste" value="Desenvolvimento de Sistemas"/>
                     " Desenvolvimento de Sistemas - "
-                    <a class="areaLink" href="#">Saiba mais</a>
+                    <a class="areaLink" onclick="inModel('desenvolvimento')">Saiba mais</a>
                 </label>
                 <label class="hbox fontSmall chkInput">
                     <input type="checkbox" class="analista" name="area" value=" Designer/Marketing"/>
@@ -138,7 +143,6 @@
             </div>
            </fieldset>
           </div>
-
         </div>
         <div class="alinhaFildset">
             <fieldset class="padding20 flex">
@@ -148,11 +152,10 @@
            </div>
            <div class="background">
              <div class="vbox space20 bPadding25 vBoxMax" style="max-width: 1200px; margin: auto; padding: 20px;">  
-               <label for="uploadImage" class="btnclaro" id="upload">Anexar Currículo*</label>
+               <label for="uploadImage" class="btnclaro btn" id="upload" onclick="audio.play();">Anexar Currículo*</label>
                <input   id="uploadImage" type="file" name="curriculo" onchange="preview()" style="display: none;" />
-               <label class="btnclaro">
-                 <input type="submit" value="Enviar" id="enviar"/>
-               </label>
+               <label class="btnclaro btn" for="enviar" onclick="audio.play();">Enviar</label>
+               <input type="submit"  class="btn" value="Enviar" id="enviar" style="display: none"/>
               </div>   
             </div>
         </form>
@@ -195,13 +198,20 @@
             </div>
          </div> 
        </div>
-       <script src="assets/js/scripts.js" type="text/javascript" ></script>
+       
+       <div class="containerModal" id= "containerModal">
+           <div class="modal" id="modal">
+             <div class="modalClose" id="modalClose" onclick="audio.play()">
+             <img src="assets/images/icons8-close-window-50.png" height="40"/>
+            </div>
+        </div>
+    <div>
+       
+       <script src="assets/js/scriptItens.js" type="text/javascript" ></script>
        <script src="assets/js/scriptAlert.js" type="text/javascript"></script>
        <script>
-        
-         var alertmsg = document.getElementById('alertmsg');
-       
-       <?php if(isset($_SESSION['msg'])){?>
+         <?php if(isset($_SESSION['msg'])){?>
+              var alertmsg = document.getElementById('alertmsg');
                 alertmsg.style.marginLeft="70%"; <?php } ?>
 
             setTimeout(function(){
@@ -210,6 +220,9 @@
            session_destroy();
           ?>
          }, 9000);
-       </script>
+
+         const audio = new Audio();
+         audio.src = "assets/audio/0000171.mp3";
+       </script>   
   </body>
 </html>
