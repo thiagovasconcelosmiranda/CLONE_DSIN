@@ -1,8 +1,6 @@
 <?php
    session_start();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,12 +12,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/alert.css"/><link>
     <!--js-->
     <script type="text/javascript" src="assets/js/jquery-3.6.3.min.js"></script>
-    
     <title>Dsin - Carreira</title>
-    <style>
-       
-
-       </style>
 </head>
 <body>
     <header class="cabecalho  fundocinzaescuro">
@@ -153,7 +146,7 @@
            <div class="background">
              <div class="vbox space20 bPadding25 vBoxMax" style="max-width: 1200px; margin: auto; padding: 20px;">  
                <label for="uploadImage" class="btnclaro btn" id="upload" onclick="audio.play();">Anexar Currículo*</label>
-               <input   id="uploadImage" type="file" name="curriculo" onchange="preview()" style="display: none;" />
+               <input  id="uploadImage" type="file" name="curriculo" onchange="preview()" style="display: none;" />
                <label class="btnclaro btn" for="enviar" onclick="audio.play();">Enviar</label>
                <input type="submit"  class="btn" value="Enviar" id="enviar" style="display: none"/>
               </div>   
