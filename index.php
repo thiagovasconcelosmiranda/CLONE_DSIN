@@ -1,6 +1,7 @@
 <?php
-   session_start();
-?>
+require_once 'conexao.php';
+ session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/images/DSIN-TECNOLOGIA-DA-INFORMACAO.webp" type="image/webp" sizes="16x16">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen"/><link>
-    <link rel="stylesheet" type="text/css" href="assets/css/alert.css"/><link>
+    <link rel="stylesheet" type="text/css" href="<?=$base;?>/assets/css/style.css" media="screen"/><link>
+    <link rel="stylesheet" type="text/css" href="<?=$base;?>/assets/css/alert.css"/><link>
     <!--js-->
     <script type="text/javascript" src="assets/js/jquery-3.6.3.min.js"></script>
     <title>Dsin - Carreira</title>
@@ -18,7 +19,7 @@
     <header class="cabecalho  fundocinzaescuro">
         <div class="alignHeader">
           <a href="#">
-           <img class="imglogo" src="assets/images/logo-tipoDSIN.png" alt="logo"/>
+           <img class="imglogo" src="<?=$base;?>/assets/images/logo-tipoDSIN.png" alt="logo"/>
           </a>
           <a href="#form">
            <input type='button' value="Trabalhe conosco" class="btn" onclick="audio.play();"/>
@@ -39,7 +40,7 @@
         Cadastre-se e fique sabendo das vagas!
       </div>
       <section id="form">
-      <form method="POST" action="./Dados.php" class="wrapper conteudo"
+      <form method="POST" action="./dados.php" class="wrapper conteudo"
           enctype="multipart/form-data">
          <fieldset>
             <legend>Dados</legend>
